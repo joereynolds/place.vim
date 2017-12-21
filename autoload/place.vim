@@ -2,7 +2,7 @@
 function! place#insert()
     let l:motion = place#get_motion()
     let l:insertion = place#get_insertion()
-    let l:mapping = place#get_type_for_motion(l:motion)
+    let l:mapping = place#get_type_for_motion(l:motion[0])
     let l:old_a = @a
 
     normal! ma
@@ -18,10 +18,15 @@ endfunction
 function! place#get_type_for_motion(char)
     let l:motion_mappings = {
         \'^': 'i',
-        \'b': 'i',
-        \'e': 'a',
         \'$': 'a',
+        \'f': 'i',
+        \'t': 'i',
+        \'b': 'i',
+        \'B': 'i',
+        \'e': 'a',
+        \'E': 'a',
         \'w': 'i',
+        \'W': 'i',
         \'G': 'A',
     \}
 
@@ -34,8 +39,17 @@ endfunction
 
 "Gets the motion entered by the user after ga"
 function! place#get_motion()
-    "Obviously this only works with one character motions at the moment, change this.
+    "Some motions either take an argument or are two characters long. Prompt
+    "twice for these
+    let l:two_char_motions = ['t', 'f', 'gg']
     let l:motion = nr2char(getchar())
+
+    if index(l:two_char_motions, l:motion) != -1
+        let l:motion .= nr2char(getchar())
+    else
+        return l:motion
+    endif
+
     return l:motion
 endfunction
 

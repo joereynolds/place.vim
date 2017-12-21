@@ -26,3 +26,30 @@ Do (gaG. - Add a '.' on the last line):
 Expect (A full stop to be added on the last line at the end):
   This is my buffer.
   It spans multiple lines...
+
+Given (A buffer with some text):
+  This is Y sentence
+
+Do (gafYM - Insert an M before Y):
+  gafYM
+
+Expect (A capital M to be appended from the find motion):
+  This is MY sentence
+
+Given (A buffer with some text):
+  Hell
+
+Do ( - A complicated and unrealistic insertion):
+  gae_
+  gaf_o
+  ga$f
+  ga$r
+  ga$i
+  ga$e
+  ga$n
+  ga$d
+
+Expect (An insertion to have taken place):
+  Hello_friend
+
+

@@ -68,3 +68,15 @@ a
 really long
 line.
 ```
+
+### #4
+
+A more complex motion (f)
+```
+T|his is Y sentence
+gafYM
+```
+Results in
+```
+This is MY sentence
+```
