@@ -17,11 +17,9 @@ place.vim works in the 'vim' way. Here are a few examples of what it does
 `|` denotes cursor position
 
 
+### #1
 ```
 function(na|me, $age)
-```
-
-```
 gab$
 ```
 Results in
@@ -29,10 +27,9 @@ Results in
 function($name, $age)
 ```
 
+### #2
 ```
 $thi|s->doSomeStuff = 5
-```
-```
 ga$;
 ```
 Results in
