@@ -7,7 +7,19 @@ If you suffer from the following problems, this plugin might be for you:
 - Forgotten var, let, $ or any other variant at the beginning of a line.
 - Wanted to insert some text without having to enter insert mode, move to the place, leave insert mode, and go back
 
-Look no further!
+## Why ga?
+
+I think of it as (g)o (a)ppend.
+That and `ga` by default is a pretty useless command that I thought people wouldn't mind losing.
+
+### Remapping
+
+If you don't like this mapping, you're always free to remap it
+i.e.
+
+```
+nmap z <Plug>(place-insert)
+```
 
 ## Examples
 
@@ -35,4 +47,24 @@ ga$;
 Results in
 ```
 $this->doSomeStuff = 5;
+```
+
+### #3
+
+It also supports multiple line motions
+```
+This
+is
+a
+really long
+line
+gaG.
+```
+Results in
+```
+This
+is
+a
+really long
+line.
 ```
