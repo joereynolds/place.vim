@@ -1,0 +1,17 @@
+Given ():
+  $this->test;
+
+Execute (An insertion of semi colon at the end);
+  ga$;
+
+Expect ():
+  $this->test;
+
+Given (A function parameter without a comma):
+  function($a $b)
+
+Execute (Go to the first parameter and insert a comment):
+  f$gael
+
+Expect ():
+  function($a, $b)
