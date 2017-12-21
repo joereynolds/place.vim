@@ -1,10 +1,8 @@
 "The main entry point for our command"
 function! place#insert()
-
     let motion = place#get_motion()
     let insertion = place#get_insertion()
     let mapping = place#get_type_for_motion(l:motion)
-
     let old_a = @a
 
     normal! ma
@@ -22,10 +20,12 @@ function! place#get_type_for_motion(char)
         \'^': 'i',
         \'b': 'i',
         \'e': 'a',
-        \'$': 'a'
+        \'$': 'a',
+        \'w': 'i',
+        \'G': 'A',
     \}
 
-    return motion_mappings[a:char]
+    return l:motion_mappings[a:char]
 endfunction
 
 "Gets the motion entered by the user after ga"

@@ -1,0 +1,26 @@
+place.txt For Vim version ?.? Last Change 2017 December 21
+place
+
+place.vim - Place a character without moving
+
+===============================================================================
+1. Global Options                                                 *place-options*
+
+`g:place_single_character_mode`
+
+By default, place.vim operates on one character after the given motion.
+You can make it prompt for a word after the motion instead.
+i.e.  `ga^var` Would add 'var' at the beginning.
+This would not work without this option set.
+
+===============================================================================
+2. Motion Exceptions                                    *place-motion-exceptions*
+
+Not all motions behave exactly the same as vanilla vim. This is intentional
+and can be changed if there's backlash.
+
+Below is a list of the exceptions in place.vim
+
+`G` - It goes to the end of the last line of the file instead of just jumping to the last line.
+
+vim:tw=78:ts=8:ft=help:norl:

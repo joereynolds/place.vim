@@ -1,17 +1,28 @@
-Given ():
+Given (A buffer with some text):
   $this->test
 
-Do (An insertion of semi colon at the end);
+Do (ga$; - Insert a semi-colon);
   ga$;
 
-Expect ():
+Expect (A semi colon to be inserted at the end):
   $this->test;
 
 Given (A function parameter without a comma):
   function($a $b)
 
-Do (Go to the first parameter and insert a comment):
+Do (f$gae - Go to the first parameter and insert a comment):
   f$gae,
 
-Expect ():
+Expect (A comma to be inserted):
   function($a, $b)
+
+Given (A multiline buffer):
+  This is my buffer.
+  It spans multiple lines..
+
+Do (gaG. - Add a '.' on the last line):
+  gaG.
+
+Expect (A full stop to be added on the last line at the end):
+  This is my buffer.
+  It spans multiple lines...
