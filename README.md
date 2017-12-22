@@ -73,10 +73,10 @@ line.
 
 ### #4
 
-A more complex motion (f)
+A more complex motion (t)
 ```
 T|his is Y sentence
-gafYM
+gatYM
 ```
 Results in
 ```
