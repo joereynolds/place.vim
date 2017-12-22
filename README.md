@@ -7,6 +7,8 @@ If you suffer from the following problems, this plugin might be for you:
 - Forgotten var, let, $ or any other variant at the beginning of a line.
 - Wanted to insert some text without having to enter insert mode, move to the place, leave insert mode, and go back
 
+![](https://i.imgur.com/pnmaJx9.gif)
+
 ## Why ga?
 
 I think of it as (g)o (a)ppend.
@@ -71,12 +73,23 @@ line.
 
 ### #4
 
-A more complex motion (f)
+A more complex motion (t)
 ```
 T|his is Y sentence
-gafYM
+gatYM
 ```
 Results in
 ```
 This is MY sentence
 ```
+
+## FAQ
+
+> I want to enter 'var' or 'let' like you said I could in the README!
+
+Sure thing, you need to disable the default option, do this:
+
+`let g:place_single_character_mode = 0`
+
+Now, when you finish your motion, an input box will appear with what you want to insert.
+This is turned off by default because I imagine the majority of people want to insert small things like $ or ;.
