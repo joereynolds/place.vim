@@ -7,6 +7,8 @@ If you suffer from the following problems, this plugin might be for you:
 - Forgotten var, let, $ or any other variant at the beginning of a line.
 - Wanted to insert some text without having to enter insert mode, move to the place, leave insert mode, and go back
 
+![](https://i.imgur.com/pnmaJx9.gif)
+
 ## Why ga?
 
 I think of it as (g)o (a)ppend.
