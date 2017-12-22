@@ -9,18 +9,14 @@ If you suffer from the following problems, this plugin might be for you:
 
 ![](https://i.imgur.com/pnmaJx9.gif)
 
-## Why ga?
+## Mapping
 
-I think of it as (g)o (a)ppend.
-That and `ga` by default is a pretty useless command that I thought people wouldn't mind losing.
+Add a mapping of your choice to get place.vim working for you.
 
-### Remapping
-
-If you don't like this mapping, you're always free to remap it
-i.e.
+Example:
 
 ```
-nmap z <Plug>(place-insert)
+nmap ga <Plug>(place-insert)
 ```
 
 ## Examples
