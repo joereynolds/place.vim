@@ -17,7 +17,7 @@ i.e.  `ga^var` Would add 'var' at the beginning.
 
 
 ===============================================================================
-2. Motion Exceptions                                    *place-motion-exceptions*
+2. Motion Exceptions and quirks                         *place-motion-exceptions*
 
 Not all motions behave exactly the same as vanilla vim. This is intentional
 and can be changed if there's backlash.

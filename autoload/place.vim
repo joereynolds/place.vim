@@ -19,8 +19,8 @@ function! place#get_type_for_motion(char)
     let l:motion_mappings = {
         \'^': 'i',
         \'$': 'a',
-        \'f': 'i',
-        \'t': 'i',
+        \'f': 'a',
+        \'t': 'a',
         \'b': 'i',
         \'B': 'i',
         \'e': 'a',

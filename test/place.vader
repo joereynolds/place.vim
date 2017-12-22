@@ -30,18 +30,27 @@ Expect (A full stop to be added on the last line at the end):
 Given (A buffer with some text):
   This is Y sentence
 
-Do (gafYM - Insert an M before Y):
-  gafYM
+Do (gatYM - Insert an M before Y):
+  gatYM
 
 Expect (A capital M to be appended from the find motion):
   This is MY sentence
+
+Given (A buffer with some text):
+  function(x, $y)
+
+Do (gaf($ - Insert a $ after the opening paren):
+  gaf($
+
+Expect(A $ to be inserted after the opening paren):
+  function($x, $y)
 
 Given (A buffer with some text):
   Hell
 
 Do ( - A complicated and unrealistic insertion):
   gae_
-  gaf_o
+  gat_o
   ga$f
   ga$r
   ga$i
