@@ -37,7 +37,7 @@ function! place#get_type_for_motion(char)
     return l:motion_mappings[a:char]
 endfunction
 
-"Gets the motion entered by the user after ga"
+"Gets the motion entered by the user after ga
 function! place#get_motion()
     "Some motions either take an argument or are two characters long. Prompt
     "twice for these
