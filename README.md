@@ -82,3 +82,14 @@ Results in
 ```
 This is MY sentence
 ```
+
+## FAQ
+
+> I want to enter 'var' or 'let' like you said I could in the README!
+
+Sure thing, you need to disable the default option, do this:
+
+`let g:place_single_character_mode = 0`
+
+Now, when you finish your motion, an input box will appear with what you want to insert.
+This is turned off by default because I imagine the majority of people want to insert small things like $ or ;.
