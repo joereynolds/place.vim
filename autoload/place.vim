@@ -12,7 +12,7 @@ function! place#insert(shouldPrompt, shouldRepeat)
     "This is a hack to keep the cursor position for undos
     "see here http://vim.wikia.com/wiki/Restore_the_cursor_position_after_undoing_text_change_made_by_a_script
     normal! ix
-    normal! x
+    normal! "_x
 
     normal! ma
     execute 'normal! ' . s:motion . s:mapping . s:insertion
