@@ -7,6 +7,11 @@ function! place#insert()
 
     normal! ma
     execute 'normal! ' . l:motion . l:mapping . l:insertion
+
+    if g:place_blink ==# 1
+        call place#blink()
+    endif
+
     normal! `a
 
     let @a = l:old_a
@@ -62,4 +67,13 @@ function! place#get_insertion()
         return nr2char(getchar())
     endif
     return input('Insertion: ')
+endfunction
+
+function! place#blink()
+    let l:blink = matchaddpos('DiffAdd', [[line('.'), col('.')]])
+    redraw
+    sleep 50m
+    call matchdelete(l:blink)
+    redraw
+    sleep 50m
 endfunction

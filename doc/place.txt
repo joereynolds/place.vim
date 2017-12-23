@@ -7,13 +7,22 @@ place.vim - Place a character without moving
 1. Global Options                                                 *place-options*
 
 `g:place_single_character_mode`
-(default is on)
+(default '1')
 
-By default, place.vim operates on one character after the given motion.
-You can make it prompt for a word after the motion instead.
-i.e.  `ga^var` Would add 'var' at the beginning.
+    By default, place.vim operates on one character after the given motion.
+    You can make it prompt for a word after the motion instead.
+    i.e.  `ga^var` Would add 'var' at the beginning.
+    To prompt for words, set it to a value other than 1.
+    
+    `let g:place_single_character_mode = 0`
 
-`let g:place_single_character_mode = 0` will allow prompts for words
+`g:place_blink`
+(default '1')
+
+    By default, place.vim blinks where the entry has been made.
+    To disable blinking, set it to a value other than 1.
+
+    `let g:place_blink = 0`
 
 ===============================================================================
 2. Mapping                                                       *place-mappings*
