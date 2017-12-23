@@ -1,7 +1,8 @@
 "The main entry point for our command"
-function! place#insert()
+"shouldPrompt = Whether or not we should prompt for multi character insertions
+function! place#insert(shouldPrompt)
     let l:motion = place#get_motion()
-    let l:insertion = place#get_insertion()
+    let l:insertion = place#get_insertion(a:shouldPrompt)
     let l:mapping = place#get_type_for_motion(l:motion[0])
     let l:old_a = @a
 
@@ -62,10 +63,17 @@ endfunction
 "Gets the text you wish to place after the motion
 "i.e. gabtest
 "It is the 'test' part of the above example
-function! place#get_insertion()
+"shouldPrompt = Whether or not we should prompt for multi character insertions
+function! place#get_insertion(shouldPrompt)
+
+    if a:shouldPrompt ==# 1
+        return input('Insertion: ')
+    endif
+
     if g:place_single_character_mode ==# 1
         return nr2char(getchar())
     endif
+
     return input('Insertion: ')
 endfunction
 

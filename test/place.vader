@@ -1,5 +1,6 @@
 Before (Set the mapping to ga for tests):
   nmap ga <Plug>(place-insert)
+  let g:place_blink = 0
 
 Given (A buffer with some text):
   $this->test
@@ -78,5 +79,3 @@ Do ( - A complicated and unrealistic insertion):
 
 Expect (An insertion to have taken place):
   Hello_friend
-
-
