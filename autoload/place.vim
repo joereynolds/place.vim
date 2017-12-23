@@ -1,13 +1,18 @@
 "The main entry point for our command"
 "shouldPrompt = Whether or not we should prompt for multi character insertions
-"repeat = Whether or not to reuse values for dot repeat
-function! place#insert(shouldPrompt,shouldRepeat)
+"shouldRepeat = Whether or not to reuse values for dot repeat
+function! place#insert(shouldPrompt, shouldRepeat)
     if !a:shouldRepeat
         let s:motion = place#get_motion()
         let s:insertion = place#get_insertion(a:shouldPrompt)
         let s:mapping = place#get_type_for_motion(s:motion[0])
     endif
     let l:old_a = @a
+
+    "This is a hack to keep the cursor position for undos
+    "see here http://vim.wikia.com/wiki/Restore_the_cursor_position_after_undoing_text_change_made_by_a_script
+    normal! ix
+    normal! x
 
     normal! ma
     execute 'normal! ' . s:motion . s:mapping . s:insertion
@@ -72,15 +77,13 @@ endfunction
 "shouldPrompt = Whether or not we should prompt for multi character insertions
 function! place#get_insertion(shouldPrompt)
 
-    if a:shouldPrompt ==# 1
+    if a:shouldPrompt ==# 1 || g:place_single_character_mode != 1
         return input('Insertion: ')
     endif
 
     if g:place_single_character_mode ==# 1
         return nr2char(getchar())
     endif
-
-    return input('Insertion: ')
 endfunction
 
 function! place#blink()
