@@ -41,6 +41,24 @@ Expect (A capital M to be appended from the find motion):
   This is MY sentence
 
 Given (A buffer with some text):
+  I like ars.
+
+Do (gaFac - Insert a c before a):
+  f.gaFac
+
+Expect (c to be inserted before a):
+  I like cars.
+
+Given (A buffer with some text):
+  I hae cars.
+
+Do (gaTa - Insert a t to spell 'hate'):
+  fcgaTat
+
+Expect (t to be inserted after a and before e):
+  I hate cars.
+
+Given (A buffer with some text):
   ?php
   $a = 4;
   $b = 5;
