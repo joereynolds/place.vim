@@ -1,13 +1,16 @@
 "The main entry point for our command"
 "shouldPrompt = Whether or not we should prompt for multi character insertions
-function! place#insert(shouldPrompt)
-    let l:motion = place#get_motion()
-    let l:insertion = place#get_insertion(a:shouldPrompt)
-    let l:mapping = place#get_type_for_motion(l:motion[0])
+"repeat = Whether or not to reuse values for dot repeat
+function! place#insert(shouldPrompt,shouldRepeat)
+    if !a:shouldRepeat
+        let s:motion = place#get_motion()
+        let s:insertion = place#get_insertion(a:shouldPrompt)
+        let s:mapping = place#get_type_for_motion(s:motion[0])
+    endif
     let l:old_a = @a
 
     normal! ma
-    execute 'normal! ' . l:motion . l:mapping . l:insertion
+    execute 'normal! ' . s:motion . s:mapping . s:insertion
 
     if g:place_blink ==# 1
         call place#blink()
@@ -16,6 +19,7 @@ function! place#insert(shouldPrompt)
     normal! `a
 
     let @a = l:old_a
+    silent! call repeat#set("\<Plug>(place-insert-repeat)", v:count)
 endfunction
 
 "We don't always want to use 'i' to enter insert mode.
