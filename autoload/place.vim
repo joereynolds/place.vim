@@ -27,6 +27,7 @@ function! place#get_type_for_motion(char)
         \'E': 'a',
         \'w': 'i',
         \'W': 'i',
+        \'g': 'i',
         \'G': 'A',
     \}
 
@@ -41,7 +42,7 @@ endfunction
 function! place#get_motion()
     "Some motions either take an argument or are two characters long. Prompt
     "twice for these
-    let l:two_char_motions = ['t', 'f', 'gg']
+    let l:two_char_motions = ['t', 'f', 'g']
     let l:motion = nr2char(getchar())
 
     if index(l:two_char_motions, l:motion) != -1

@@ -37,6 +37,21 @@ Expect (A capital M to be appended from the find motion):
   This is MY sentence
 
 Given (A buffer with some text):
+  ?php
+  $a = 4;
+  $b = 5;
+  $c = $a + $b;
+
+Do (gagg< - Insert a < at the start of the file):
+  gagg<
+
+Expect(A < to be inserted at the beginning of the file):
+  <?php
+  $a = 4;
+  $b = 5;
+  $c = $a + $b;
+
+Given (A buffer with some text):
   function(x, $y)
 
 Do (gaf($ - Insert a $ after the opening paren):
