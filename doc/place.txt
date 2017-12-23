@@ -1,4 +1,4 @@
-place.txt For Vim version ?.? Last Change 2017 December 21
+place.txt For Vim version ?.? Last Change 2017 December 23
 place
 
 place.vim - Place a character without moving
@@ -15,15 +15,22 @@ i.e.  `ga^var` Would add 'var' at the beginning.
 
 `let g:place_single_character_mode = 0` will allow prompts for words
 
+===============================================================================
+2. Mapping                                                       *place-mappings*
+
+You will need to add a mapping to get place.vim working for you.
+Here's an example where `ga` is mapped.
+
+`nmap ga <Plug>(place-insert)`
 
 ===============================================================================
-2. Motion Exceptions and quirks                         *place-motion-exceptions*
+3. Motion Exceptions and quirks                         *place-motion-exceptions*
 
-Not all motions behave exactly the same as vanilla vim. This is intentional
-and can be changed if there's backlash.
+Not all motions behave exactly the same as vanilla vim.
 
 Below is a list of the exceptions in place.vim
 
-`G` - It goes to the end of the last line of the file instead of just jumping to the last line.
+`G` - It goes to the end of the last line of the file instead of just jumping
+    to the last line.
 
 vim:tw=78:ts=8:ft=help:norl:
