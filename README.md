@@ -21,6 +21,7 @@ nmap ga <Plug>(place-insert)
 
 ## Examples
 
+(Examples are using `ga` as the prefix key but it can be anything you want)
 place.vim works in the 'vim' way. Here are a few examples of what it does
 
 
