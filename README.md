@@ -83,7 +83,10 @@ This is MY sentence
 
 > I want to enter 'var' or 'let' like you said I could in the README!
 
-Sure thing, you need to disable the default option, do this:
+Sure thing, there's a separate mapping `<Plug>(place-insert-multiple)` to map to.
+Read the docs.
+
+Either that or you can enable it globally:
 
 `let g:place_single_character_mode = 0`
 

@@ -13,7 +13,7 @@ place.vim - Place a character without moving
     You can make it prompt for a word after the motion instead.
     i.e.  `ga^var` Would add 'var' at the beginning.
     To prompt for words, set it to a value other than 1.
-    
+
     `let g:place_single_character_mode = 0`
 
 `g:place_blink`
@@ -28,9 +28,21 @@ place.vim - Place a character without moving
 2. Mapping                                                       *place-mappings*
 
 You will need to add a mapping to get place.vim working for you.
-Here's an example where `ga` is mapped.
+Here's an example where `ga` is mapped to insert a single character.
 
 `nmap ga <Plug>(place-insert)`
+
+<Plug>(place-insert)
+
+    This mapping places a single character after a motion.
+
+    `nmap ga <Plug>(place-insert)`
+
+<Plug>(place-insert-multiple)
+
+    This mapping prompts you for an insertion after a motion.
+
+    `nmap gb <Plug>(place-insert-multiple)`
 
 ===============================================================================
 3. Motion Exceptions and quirks                         *place-motion-exceptions*
