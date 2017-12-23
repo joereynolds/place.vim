@@ -1,3 +1,6 @@
+Before (Set the mapping to ga for tests):
+  nmap ga <Plug>(place-insert)
+
 Given (A buffer with some text):
   $this->test
 
