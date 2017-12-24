@@ -66,8 +66,6 @@ function! place#get_motion()
 
     if index(l:two_char_motions, l:motion) != -1
         let l:motion .= nr2char(getchar())
-    else
-        return l:motion
     endif
 
     return l:motion
@@ -78,11 +76,9 @@ endfunction
 "It is the 'test' part of the above example
 "shouldPrompt = Whether or not we should prompt for multi character insertions
 function! place#get_insertion(shouldPrompt)
-
     if a:shouldPrompt ==# 1 || g:place_single_character_mode != 1
         return input('Insertion: ')
     endif
-
     if g:place_single_character_mode ==# 1
         return nr2char(getchar())
     endif
