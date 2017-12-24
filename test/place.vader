@@ -74,6 +74,21 @@ Expect(A < to be inserted at the beginning of the file):
   $c = $a + $b;
 
 Given (A buffer with some text):
+  This is
+  one paragraph
+
+  here is another
+
+Do (ga}- - Insert a dash in the linebreak):
+  ga}-
+
+Expect (A - to be inserted):
+  This is
+  one paragraph
+  -
+  here is another
+
+Given (A buffer with some text):
   function(x, $y)
 
 Do (gaf($ - Insert a $ after the opening paren):

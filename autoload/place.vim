@@ -46,6 +46,8 @@ function! place#get_type_for_motion(char)
         \'W': 'i',
         \'g': 'i',
         \'G': 'A',
+        \'}': 'i',
+        \'{': 'i'
     \}
 
     if index(keys(l:motion_mappings), a:char) == -1
