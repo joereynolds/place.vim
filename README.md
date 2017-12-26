@@ -17,6 +17,7 @@ Example:
 
 ```
 nmap ga <Plug>(place-insert)
+nmap gb <Plug>(place-insert-multiple)
 ```
 
 ## Examples
@@ -87,10 +88,6 @@ This is MY sentence
 
 Sure thing, there's a separate mapping `<Plug>(place-insert-multiple)` to map to.
 Read the docs.
-
-Either that or you can enable it globally:
-
-`let g:place_single_character_mode = 0`
 
 Now, when you finish your motion, an input box will appear with what you want to insert.
 This is turned off by default because I imagine the majority of people want to insert small things like $ or ;.

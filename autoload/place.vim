@@ -76,12 +76,11 @@ endfunction
 "It is the 'test' part of the above example
 "shouldPrompt = Whether or not we should prompt for multi character insertions
 function! place#get_insertion(shouldPrompt)
-    if a:shouldPrompt ==# 1 || g:place_single_character_mode != 1
+    if a:shouldPrompt ==# 1
         return input('Insertion: ')
     endif
-    if g:place_single_character_mode ==# 1
-        return nr2char(getchar())
-    endif
+
+    return nr2char(getchar())
 endfunction
 
 function! place#blink()
