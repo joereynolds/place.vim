@@ -7,23 +7,21 @@ function! place#insert(shouldPrompt, shouldRepeat)
         let s:insertion = place#get_insertion(a:shouldPrompt)
         let s:mapping = place#get_type_for_motion(s:motion[0])
     endif
-    let l:old_a = @a
 
     "This is a hack to keep the cursor position for undos
     "see here http://vim.wikia.com/wiki/Restore_the_cursor_position_after_undoing_text_change_made_by_a_script
     normal! ix
     normal! "_x
 
-    normal! ma
+    let pos = winsaveview()
     execute 'normal! ' . s:motion . s:mapping . s:insertion
 
-    if g:place_blink ==# 1
+    if g:place_blink == 1
         call place#blink()
     endif
 
-    normal! `a
+    call winrestview(pos)
 
-    let @a = l:old_a
     silent! call repeat#set("\<Plug>(place-insert-repeat)", v:count)
 endfunction
 
