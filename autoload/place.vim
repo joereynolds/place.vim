@@ -27,6 +27,7 @@ function! place#get_type_for_motion(char)
         \'E': 'a',
         \'w': 'i',
         \'W': 'i',
+        \'gg': 'I',
         \'G': 'A',
     \}
 
