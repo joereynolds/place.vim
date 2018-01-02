@@ -1,4 +1,4 @@
-place.txt For Vim version ?.? Last Change 2017 December 21
+place.txt For Vim version ?.? Last Change 2017 December 23
 place
 
 place.vim - Place a character without moving
@@ -6,24 +6,42 @@ place.vim - Place a character without moving
 ===============================================================================
 1. Global Options                                                 *place-options*
 
-`g:place_single_character_mode`
-(default is on)
+`g:place_blink`
+(default '1')
 
-By default, place.vim operates on one character after the given motion.
-You can make it prompt for a word after the motion instead.
-i.e.  `ga^var` Would add 'var' at the beginning.
+    By default, place.vim blinks where the entry has been made.
+    To disable blinking, set it to a value other than 1.
 
-`let g:place_single_character_mode = 0` will allow prompts for words
-
+    `let g:place_blink = 0`
 
 ===============================================================================
-2. Motion Exceptions and quirks                         *place-motion-exceptions*
+2. Mapping                                                       *place-mappings*
 
-Not all motions behave exactly the same as vanilla vim. This is intentional
-and can be changed if there's backlash.
+You will need to add a mapping to get place.vim working for you.
+Here's an example where `ga` is mapped to insert a single character.
+
+`nmap ga <Plug>(place-insert)`
+
+<Plug>(place-insert)
+
+    This mapping places a single character after a motion.
+
+    `nmap ga <Plug>(place-insert)`
+
+<Plug>(place-insert-multiple)
+
+    This mapping prompts you for an insertion after a motion.
+
+    `nmap gb <Plug>(place-insert-multiple)`
+
+===============================================================================
+3. Motion Exceptions and quirks                         *place-motion-exceptions*
+
+Not all motions behave exactly the same as vanilla vim.
 
 Below is a list of the exceptions in place.vim
 
-`G` - It goes to the end of the last line of the file instead of just jumping to the last line.
+`G` - It goes to the end of the last line of the file instead of just jumping
+    to the last line.
 
 vim:tw=78:ts=8:ft=help:norl:

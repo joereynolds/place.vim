@@ -7,7 +7,7 @@ If you suffer from the following problems, this plugin might be for you:
 - Forgotten var, let, $ or any other variant at the beginning of a line.
 - Wanted to insert some text without having to enter insert mode, move to the place, leave insert mode, and go back
 
-![](https://i.imgur.com/pnmaJx9.gif)
+![](https://i.imgur.com/N3rcDUi.gif)
 
 ## Mapping
 
@@ -17,9 +17,12 @@ Example:
 
 ```
 nmap ga <Plug>(place-insert)
+nmap gb <Plug>(place-insert-multiple)
 ```
 
 ## Examples
+
+(Examples are using `ga` as the prefix key but it can be anything you want)
 
 place.vim works in the 'vim' way. Here are a few examples of what it does
 
@@ -83,9 +86,8 @@ This is MY sentence
 
 > I want to enter 'var' or 'let' like you said I could in the README!
 
-Sure thing, you need to disable the default option, do this:
-
-`let g:place_single_character_mode = 0`
+Sure thing, there's a separate mapping `<Plug>(place-insert-multiple)` to map to.
+Read the docs.
 
 Now, when you finish your motion, an input box will appear with what you want to insert.
 This is turned off by default because I imagine the majority of people want to insert small things like $ or ;.

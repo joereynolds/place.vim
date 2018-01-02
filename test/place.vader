@@ -1,3 +1,7 @@
+Before (Set the mapping to ga for tests):
+  nmap ga <Plug>(place-insert)
+  let g:place_blink = 0
+
 Given (A buffer with some text):
   $this->test
 
@@ -37,6 +41,54 @@ Expect (A capital M to be appended from the find motion):
   This is MY sentence
 
 Given (A buffer with some text):
+  I like ars.
+
+Do (gaFac - Insert a c before a):
+  f.gaFac
+
+Expect (c to be inserted before a):
+  I like cars.
+
+Given (A buffer with some text):
+  I hae cars.
+
+Do (gaTa - Insert a t to spell 'hate'):
+  fcgaTat
+
+Expect (t to be inserted after a and before e):
+  I hate cars.
+
+Given (A buffer with some text):
+  ?php
+  $a = 4;
+  $b = 5;
+  $c = $a + $b;
+
+Do (gagg< - Insert a < at the start of the file):
+  gagg<
+
+Expect(A < to be inserted at the beginning of the file):
+  <?php
+  $a = 4;
+  $b = 5;
+  $c = $a + $b;
+
+Given (A buffer with some text):
+  This is
+  one paragraph
+
+  here is another
+
+Do (ga}- - Insert a dash in the linebreak):
+  ga}-
+
+Expect (A - to be inserted):
+  This is
+  one paragraph
+  -
+  here is another
+
+Given (A buffer with some text):
   function(x, $y)
 
 Do (gaf($ - Insert a $ after the opening paren):
@@ -60,5 +112,3 @@ Do ( - A complicated and unrealistic insertion):
 
 Expect (An insertion to have taken place):
   Hello_friend
-
-
