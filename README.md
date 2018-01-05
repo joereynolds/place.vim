@@ -90,4 +90,3 @@ Sure thing, there's a separate mapping `<Plug>(place-insert-multiple)` to map to
 Read the docs.
 
 Now, when you finish your motion, an input box will appear with what you want to insert.
-This is turned off by default because I imagine the majority of people want to insert small things like $ or ;.
